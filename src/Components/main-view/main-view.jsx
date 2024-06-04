@@ -3,37 +3,28 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-    const [movies, setMovies] = useState([
-      {
-        id: 1,
-        Title: 'Shutter Island',
-        Director: 'Martin Scorsese',
-        Genre:'Suspense-Thriller',
-        ImageUrl: 'https://upload.wikimedia.org/wikipedia/en/7/76/Shutterislandposter.jpg'
-      },
-      {
-        id: 2,
-        Title: 'The Fugitive',
-        Director: 'Andrew Davis',
-        Genre: 'Suspense-Thriller',
-        ImageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/The_Fugitive_official_logo.png/250px-The_Fugitive_official_logo.png'
-      },
-      {
-        id: 3,
-        Title: 'The Shack',
-        Director: 'Stuart Hazeldine',
-        Genre: 'Feel-Good',
-        ImageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/fd/Shackover.jpg'
-      },
-  ]);
+    const [movies, setMovies] = useState([]);
+    const [selectedMovie, setSelectedMovie] = useState(null);
+    useEffect(() => {
+        fetch("https://movie-api-dwho.onrender.com")
+          .then((response) => response.json())
+          .then((movies) => {
+            const moviesFromApi = data.docs.map((doc) => {
+                return {
+                    id: doc.key,
+                    title: doc.title,
+                    image: `'upload.wikimedia.org/wikipedia/en/7/76/Shutterislandposter.jpg'`,
+                    director: doc.author_name?.[0]
+                  };
+            });
 
-  const [selectedMovie, setSelectedMovie] = useState(null);
-
+            setMovies(moviesFromApi);
+          });
+      }, []);
   if (selectedMovie) {
     return (
       <MovieView
-        movie={selectedMovie}
-        onBackClick={() => setSelectedMovie(null)}
+        movie={selectedMovie} onBackClick={() => setSelectedMovie(null)}
       />
     );
   }
@@ -47,8 +38,8 @@ export const MainView = () => {
         <MovieCard
           key={movie.id}
           movie={movie}
-          onMovieClick={() => {
-            setSelectedMovie(movie);
+          onMovieClick={(newSelectedMovie) => {
+            setSelectedMovie(newSelectedMovie);
           }}
         />
       ))}
