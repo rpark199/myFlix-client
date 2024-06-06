@@ -18,5 +18,5 @@ export const MovieCard = ({ movie, onMovieClick }) => {
       image: PropTypes.string.isRequired,
       author:PropTypes.string
     }).isRequired,
-    onBookClick: PropTypes.func.isRequired
+    onMovieClick: PropTypes.func.isRequired
   };
