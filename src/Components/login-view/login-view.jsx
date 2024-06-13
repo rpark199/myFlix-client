@@ -14,7 +14,9 @@ export const LoginView = ({ onLoggedIn }) => {
 
         fetch("https://moviflex-a914bff79426.herokuapp.com/login", {
             method: "POST",
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { 
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(data)
         })
             .then((response) => response.json())
