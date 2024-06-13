@@ -12,7 +12,7 @@ export const LoginView = ({ onLoggedIn }) => {
             secret: password
         };
 
-        fetch("https://movie-api-dwho.onrender.com/account/login.json", {
+        fetch("https://movie-api-dwho.onrender.com/login", {
             method: "POST",
             headers: { Authorization: `Bearer ${token}` },
             body: JSON.stringify(data)
