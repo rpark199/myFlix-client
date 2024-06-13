@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-//import { LoginView } from "../login-view/login-view";
-
+import { LoginView } from "../login-view/login-view";
+import { SignupView } from "../signup-view/signup-view";
 
 export const MainView = () => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
+  const [user, setUser] = useState(storedUser? storedUser : null);
+  const [token, setToken] = useState(storedToken? storedToken : null);
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  //const [user, setUser] = useState(null);
-  const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjYxZmI3ZmE5ZmM4YzhkNDRjMWE2YmIiLCJVc2VybmFtZSI6ImpvaG5kb2UxMiIsIlBhc3N3b3JkIjoiJDJiJDEwJFgzaGkyN2ZyR29TblUwRVJpSnhlSU83L2lrUXM1YXpZNFFySWpJT0hTcVJ2Qmo5N2s5aDIuIiwiRW1haWwiOiJqb2huZG9lMjEyQGVtYWlsLmNvbSIsIkJpcnRoZGF5IjoiMTk3MC0xMS0xNlQwMDowMDowMC4wMDBaIiwiRmF2b3JpdGVNb3ZpZXMiOltdLCJfX3YiOjAsImlhdCI6MTcxNzY5NzQxNywiZXhwIjoxNzE4MzAyMjE3LCJzdWIiOiJqb2huZG9lMTIifQ.ebKdJfjJ9ZWrEQkQ51iNTDaE9KzsNyJkj7Bhu-J51Zk`;
+  
   useEffect(() => {
+    if (!token) return;
+
     fetch("https://movie-api-dwho.onrender.com/movies", {
-      method: "GET",
-      headers: {"Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      }
+      headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
       .then((movies) => {
@@ -32,9 +34,17 @@ export const MainView = () => {
       });
   }, []);
   
-  /*if (!user) {
-    return <LoginView />;
-  } */ 
+  if (!user) {
+    return (
+      <>
+        <LoginView onLoggedIn={(user, token) => {
+          setUser(user);
+          setToken(token);
+        }} />
+        <SignupView />
+      </>
+    );
+  }
 
   if (selectedMovie) {
     return (
@@ -48,6 +58,7 @@ export const MainView = () => {
 
   return (
     <div>
+      <button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</button>
       {movies.map((movie) => (
         <MovieCard
           key={movie.id}
