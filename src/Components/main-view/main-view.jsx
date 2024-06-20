@@ -15,12 +15,13 @@ export const MainView = () => {
   useEffect(() => {
     if (!token) return;
 
-    fetch("https://https://moviflex-a914bff79426.herokuapp.com/movies", {
+    fetch("https://moviflex-a914bff79426.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((response) => response.json())
       .then((movies) => {
         const moviesFromApi = movies.map((doc) => {
+          console.log(doc);
           return {
             id: doc._id,
             Title: doc.Title,
