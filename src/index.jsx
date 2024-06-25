@@ -3,12 +3,11 @@ import { MainView } from "./Components/main-view/main-view";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 
-// Main component (will eventually use all the others)
 const MyFlixApplication = () => {
   return (
-    <div className="my-flix">
+    <Container style={{border: "1px solid red"}}>
      <MainView />
-    </div>
+    </Container>
   );
 };
 
