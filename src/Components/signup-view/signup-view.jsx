@@ -62,6 +62,7 @@ export const SignupView = () => {
                     required
                 />
             </label>
+            <br />
             <label>
                 Birthday:
                 <input
