@@ -1,0 +1,14 @@
+$primary: #915F6D;
+$body-bg: #DABCF4;
+
+@import '~bootstrap/scss/bootstrap.scss';
+$color: steelblue;
+
+.my-flix {
+  color: $color;
+}
+
+label {
+  margin: 10px;
+  display: block;
+}
