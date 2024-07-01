@@ -8,9 +8,8 @@ import { Container } from "react-bootstrap";
 const MyFlixApplication = () => {
   return (
     <Container>
-     <MainView />
+      <MainView></MainView>
     </Container>
-
   );
 };
 

@@ -49,6 +49,7 @@ export const LoginView = ({ onLoggedIn }) => {
                     minLength="3"
                 />
             </Form.Group>
+            
             <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
