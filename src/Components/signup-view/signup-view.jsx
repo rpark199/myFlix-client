@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export const SignupView = () => {
     const [username, setUsername] = useState("");
@@ -78,7 +80,7 @@ export const SignupView = () => {
                     required
                 />
             </Form.Group>
-            <button variant="primary" type="submit">Submit</button>
+            <Button variant="primary" type="submit">Submit</Button>
         </Form>
     );
 };
