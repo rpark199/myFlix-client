@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./movie-view.scss";
 
 export const MovieView = ({ movie, onBackClick }) => {
