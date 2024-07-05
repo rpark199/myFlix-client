@@ -37,6 +37,27 @@ export const MainView = () => {
       });
   }, []);
 
+  if (!user) {
+    return (
+        <LoginView
+            onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+            }}
+        />
+      );
+  }
+
+  if(selectedMovie) {
+    return (
+      <MovieView movie= {selectedMovie} onBackClick={() => setSelectedMovie(null)} />
+    );
+  }
+
+  if (movies.length === 0) {
+    return <div>The list is empty!</div>;
+  }
+
   return (
     <Row className="justify-content-md-center">
       {!user ? (
