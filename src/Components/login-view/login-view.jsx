@@ -49,6 +49,7 @@ export const LoginView = ({ onLoggedIn }) => {
                     minLength="3"
                 />
             </Form.Group>
+            
             <Form.Group controlId="formPassword">
                 <Form.Label>Password:</Form.Label>
                 <Form.Control
@@ -58,7 +59,7 @@ export const LoginView = ({ onLoggedIn }) => {
                     required
                 />
             </Form.Group>
-            <button variant="primary" type="submit">Submit</button>
+            <Button variant="primary" type="submit">Submit</Button>
         </Form>
     );
 };
