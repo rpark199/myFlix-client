@@ -16,5 +16,5 @@ export const NavigationBar= ({ user, onLoggedOut }) => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-    )
-}
+    );
+};
