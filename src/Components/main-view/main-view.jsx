@@ -15,11 +15,14 @@ export const MainView = () => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   
   useEffect(() => {
-    fetch("https://moviflex-a914bff79426.herokuapp.com/movies", {
-      method: "GET",
-      "Content-Type": "application/json",
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
+    if (token) {
+      fetch("https://moviflex-a914bff79426.herokuapp.com/movies", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => response.json())
       .then((movies) => {
         const moviesFromApi = movies.map((doc) => {
@@ -35,44 +38,71 @@ export const MainView = () => {
 
         setMovies(moviesFromApi);
       });
-  }, []);
+    }
+  }, [token]);
 
-  return (
-    <Row className="justify-content-md-center">
-      {!user ? (
-        <>
-          <Col md={5}>
-          <h1>Log In</h1>
-            <LoginView onLoggedIn={(user) => setUser(user)} />
-            or
-             <h1>Sign Up</h1>
-            <SignupView />
-          </Col>  
-        </>
-      ) : selectedMovie ? (
-      <Col md={8} style={{ border: "1px solid black" }}>
-        <MovieView
-          style={{ border: "1px solid green" }}
-          movie={selectedMovie}
-          onBackClick={() => setSelectedMovie(null)}
+  if (!user) {
+    return (
+        <LoginView
+            onLoggedIn={(user, token) => {
+                setUser(user);
+                setToken(token);
+                localStorage.setItem("users", JSON.stringify(user));
+                localStorage.setItem("token", token);
+            }}
         />
-      </Col>
-      ) : movies.length === 0 ? (
-        <div>The list is empty!</div>
-      ) : (
-        <>
-          {movies.map((movie) => (
-            <Col className="mb-5" key={movie.id} md={3}>
-              <MovieCard
-                movie={movie}
-                onMovieClick={(newSelectedMovie) => {
-                  setSelectedMovie(newSelectedMovie);
-                }}
-              />
+      );
+  }
+
+  if (selectedMovie) {
+    return (
+      <MovieView 
+        movie= {selectedMovie} 
+        onBackClick={() => setSelectedMovie(null)} 
+      />
+    );
+  }
+
+  if (movies.length === 0) {
+    return <div>The list is empty!</div>;
+  } else {
+    return (
+      <Row className="justify-content-md-center">
+        {!user ? (
+          <>
+            <Col md={5}>
+              <h1>Log In</h1>
+              <LoginView onLoggedIn={(user) => setUser(user)} />
+              or
+              <h1>Sign Up</h1>
+              <SignupView />
             </Col>
-          ))}
-        </>
-      )}
-    </Row>
-  );
+          </>
+        ) : selectedMovie ? (
+          <Col md={8} style={{ border: "1px solid black" }}>
+            <MovieView
+              style={{ border: "1px solid green" }}
+              movie={selectedMovie}
+              onBackClick={() => setSelectedMovie(null)}
+            />
+          </Col>
+        ) : movies.length === 0 ? (
+          <div>The list is empty!</div>
+        ) : (
+          <>
+            {movies.map((movie) => (
+              <Col className="mb-5" key={movie.id} md={3}>
+                <MovieCard
+                  movie={movie}
+                  onMovieClick={(newSelectedMovie) => {
+                    setSelectedMovie(newSelectedMovie);
+                  }}
+                />
+              </Col>
+            ))}
+          </>
+        )}
+      </Row>
+    );
+  }
 };

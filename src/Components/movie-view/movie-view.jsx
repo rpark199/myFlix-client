@@ -1,9 +1,12 @@
+import { useEffect, useState } from "react";
 import "./movie-view.scss";
 
 export const MovieView = ({ movie, onBackClick }) => {
     return (
       <div>
-        <img src={movie.Image} alt="" width={150} height={150} />
+        <div>
+          <img src={movie.Image} alt="" width={150} height={150} />
+        </div>
         <div>
           <span>Title: </span>
           <span>{movie.Title}</span>
