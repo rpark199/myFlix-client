@@ -6,13 +6,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import { Container } from "react-bootstrap";
 
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
+
 
 const MyFlixApplication = () => {
   return (
-    <Container>
-      <MainView />
-    </Container>
-
+    <Provider store={store}>
+      <Container>
+        <MainView />
+      </Container>
+    </Provider>
   );
 };
 
