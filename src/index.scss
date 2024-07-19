@@ -1,11 +1,60 @@
-$primary: #915F6D;
-$body-bg: #DABCF4;
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+$font-family: "M PLUS Rounded 1c", sans-serif;
+
+$primary: #b2cbec;
+ 
 
 @import '~bootstrap/scss/bootstrap.scss';
-$color: steelblue;
 
-.my-flix {
-  color: $color;
+body {
+  font-family: $font-family;
+  background-color: #b2cbec;
+}
+
+.navbar {
+  background-color: #fae5f9;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #fae5f9;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+  @media (max-width: 574px) {
+    width: 80vw;
+    height: 320px;
+    margin: 0 auto;
+  }
+}
+
+.favorite-movies-card {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+
+  @media (max-width: 574px) {
+    margin: 0 auto 10px auto;
+  }
+}
+
+.login-button,
+.signup-button,
+.update-button,
+.back-button,
+.favorite-button {
+  margin: 8px 8px 8px 0;
+}
+
+.profile-section,
+.login-section,
+.signup-section {
+  background-color: #fae5f9;
+  border-radius: 10px;
 }
 
 label {
