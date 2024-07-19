@@ -4,25 +4,35 @@ import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const MovieCard = ({ movie }) => {
-    return (
-      <Card>
-        <Card.Img variant="top" src={movie.image} />
-        <Card.Body>
-          <Card.Title>{movie.Title}</Card.Title>
-          <img src={movie.Image} alt="" width={150} height={150} />
-          <Card.Text>{movie.Description}</Card.Text>
-          <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
-            <Button variant="link">Open</Button>
+  return (
+    <Card className="h-100">
+      <Card.Img variant="top" src={movie.ImagePath} className="card-img" />
+      <Card.Body className="d-flex flex-column">
+        <Card.Title>{movie.Title}</Card.Title>
+        <div className="mt-auto">
+          <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+            <Button variant="primary" className="w-100">
+              Open
+            </Button>
           </Link>
-        </Card.Body>
-      </Card>
-    );
-  };
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
-  MovieCard.propTypes = {
-    movie: PropTypes.shape({
+// Define props constraints for MovieCard
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,
-    Image: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    Genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
     }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
-    };
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+    }).isRequired,
+    Actors: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+};
