@@ -5,13 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 export const SignupView = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [birthday, setBirthday] = useState("");
-
+    const [formData, setFormData] = useState({
+        username: "",
+        password: "",
+        confirmPassword: "",
+        email: "",
+        birthday: "",
+      });
     const [passwordError, setPasswordError] = useState(null);
     const navigate = useNavigate();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -46,10 +49,10 @@ export const SignupView = () => {
         }
 
         const data = {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
+            Username: formData.username,
+            Password: formData.password,
+            Email: formData.email,
+            Birthday: formData.birthday
         };
 
         fetch("https://moviflex-a914bff79426.herokuapp.com/users", {
@@ -77,8 +80,9 @@ export const SignupView = () => {
                             <Form.Label>Username:</Form.Label>
                             <Form.Control
                                 type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)} 
+                                name="username"
+                                value={formData.username}
+                                onChange={handleChange} 
                                 required
                                 minLength="3"
                             />
@@ -88,10 +92,15 @@ export const SignupView = () => {
                             <Form.Label>Password:</Form.Label>
                             <Form.Control
                                 type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)} 
+                                name="password"
+                                value={formData.password}
+                                onChange={handleChange} 
                                 required
+                                isInvalid={!!passwordError}
                             />
+                            <Form.Control.Feedback type="invalid">
+                                {passwordError}
+                            </Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group controlId="formEmail">
@@ -100,8 +109,9 @@ export const SignupView = () => {
                             </Form.Label>
                             <Form.Control
                                 type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
                             />
                         </Form.Group>
@@ -112,12 +122,15 @@ export const SignupView = () => {
                             </Form.Label>
                             <Form.Control
                                 type="date"
-                                value={birthday}
-                                onChange={(e) => setBirthday(e.target.value)}
+                                name="birthday"
+                                value={formData.birthday}
+                                onChange={handleChange}
                                 required
                             />
                         </Form.Group>
-                        <Button variant="primary" type="submit">Submit</Button>
+                        <Button variant="primary" type="submit" className="signup-button">
+                            Submit
+                        </Button>
                     </Form>
                 </Col>
             </Row>
