@@ -8091,7 +8091,7 @@ module.exports = require("b0f0e6b9e8349dac");
         cite: "cite",
         class: "className",
         classid: "classID",
-        classname: "className",
+        className: "className",
         cols: "cols",
         colspan: "colSpan",
         content: "content",
@@ -28017,9 +28017,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     function createInstanceTypeChecker(expectedClass) {
         function validate(props, propName, componentName, location, propFullName) {
             if (!(props[propName] instanceof expectedClass)) {
-                var expectedClassName = expectedClass.name || ANONYMOUS;
-                var actualClassName = getClassName(props[propName]);
-                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+                var expectedclassName = expectedClass.name || ANONYMOUS;
+                var actualclassName = getclassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualclassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedclassName + "`."));
             }
             return null;
         }
@@ -28210,7 +28210,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
         }
     }
     // Returns class name of the object, if any.
-    function getClassName(propValue) {
+    function getclassName(propValue) {
         if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
         return propValue.constructor.name;
     }
@@ -28865,8 +28865,8 @@ var _tooltipDefault = parcelHelpers.interopDefault(_tooltip);
 },{"./Accordion":false,"./AccordionContext":false,"./AccordionCollapse":false,"./AccordionButton":false,"./AccordionBody":false,"./AccordionHeader":false,"./AccordionItem":false,"./Alert":false,"./AlertHeading":false,"./AlertLink":false,"./Anchor":false,"./Badge":false,"./Breadcrumb":false,"./BreadcrumbItem":false,"./Button":"aPzUt","./ButtonGroup":false,"./ButtonToolbar":false,"./Card":"lAynp","./CardBody":false,"./CardFooter":false,"./CardGroup":false,"./CardHeader":false,"./CardImg":false,"./CardImgOverlay":false,"./CardLink":false,"./CardSubtitle":false,"./CardText":false,"./CardTitle":false,"./Carousel":false,"./CarouselCaption":false,"./CarouselItem":false,"./CloseButton":false,"./Col":false,"./Collapse":false,"./Container":"hEdsw","./Dropdown":false,"./DropdownButton":false,"./DropdownDivider":false,"./DropdownHeader":false,"./DropdownItem":false,"./DropdownItemText":false,"./DropdownMenu":false,"./DropdownToggle":false,"./Fade":false,"./Figure":false,"./FigureCaption":false,"./FigureImage":false,"./Form":"iBZ80","./FormControl":false,"./FormCheck":false,"./FormFloating":false,"./FloatingLabel":false,"./FormGroup":false,"./FormLabel":false,"./FormText":false,"./FormSelect":false,"./Image":false,"./InputGroup":false,"./ListGroup":false,"./ListGroupItem":false,"./Modal":false,"./ModalBody":false,"./ModalDialog":false,"./ModalFooter":false,"./ModalHeader":false,"./ModalTitle":false,"./Nav":"cXyL2","./Navbar":"1mHjo","./NavbarBrand":false,"./NavbarCollapse":false,"./NavbarOffcanvas":false,"./NavbarText":false,"./NavbarToggle":false,"./NavDropdown":false,"./NavItem":false,"./NavLink":false,"./Offcanvas":false,"./OffcanvasBody":false,"./OffcanvasHeader":false,"./OffcanvasTitle":false,"./OffcanvasToggling":false,"./Overlay":false,"./OverlayTrigger":false,"./PageItem":false,"./Pagination":false,"./Placeholder":false,"./PlaceholderButton":false,"./Popover":false,"./PopoverBody":false,"./PopoverHeader":false,"./ProgressBar":false,"./Ratio":false,"./Row":false,"./Spinner":false,"./SplitButton":false,"./SSRProvider":false,"./Stack":false,"./Tab":false,"./TabContainer":false,"./TabContent":false,"./Table":false,"./TabPane":false,"./Tabs":false,"./ThemeProvider":false,"./Toast":false,"./ToastBody":false,"./ToastContainer":false,"./ToastHeader":false,"./ToggleButton":false,"./ToggleButtonGroup":false,"./Tooltip":false,"@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aPzUt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _button = require("@restart/ui/Button");
 var _themeProvider = require("./ThemeProvider");
@@ -28885,17 +28885,17 @@ const Button = /*#__PURE__*/ _react.forwardRef(({ as, bsPrefix, variant = "prima
         ...props,
         ref: ref,
         disabled: disabled,
-        className: (0, _classnamesDefault.default)(className, prefix, active && "active", variant && `${prefix}-${variant}`, size && `${prefix}-${size}`, props.href && disabled && "disabled")
+        className: (0, _classNamesDefault.default)(className, prefix, active && "active", variant && `${prefix}-${variant}`, size && `${prefix}-${size}`, props.href && disabled && "disabled")
     });
 });
 Button.displayName = "Button";
 exports.default = Button;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"jocGM":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","@restart/ui/Button":"8YUbR","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"jocGM":[function(require,module,exports) {
 /*!
 	Copyright (c) 2018 Jed Watson.
 	Licensed under the MIT License (MIT), see
-	http://jedwatson.github.io/classnames
+	http://jedwatson.github.io/classNames
 */ /* global define */ (function() {
     "use strict";
     var hasOwn = {}.hasOwnProperty;
@@ -28924,8 +28924,8 @@ exports.default = Button;
     if (0, module.exports) {
         classNames.default = classNames;
         module.exports = classNames;
-    } else if (typeof define === "function" && typeof define.amd === "object" && define.amd) // register as 'classnames', consistent with npm package name
-    define("classnames", [], function() {
+    } else if (typeof define === "function" && typeof define.amd === "object" && define.amd) // register as 'classNames', consistent with npm package name
+    define("classNames", [], function() {
         return classNames;
     });
     else window.classNames = classNames;
@@ -29968,8 +29968,8 @@ exports.default = ThemeProvider;
 },{"react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"lAynp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _cardBody = require("./CardBody");
@@ -29998,7 +29998,7 @@ as: Component = "div", ...props }, ref)=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
         ...props,
-        className: (0, _classnamesDefault.default)(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
+        className: (0, _classNamesDefault.default)(className, prefix, bg && `bg-${bg}`, text && `text-${text}`, border && `border-${border}`),
         children: body ? /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _cardBodyDefault.default), {
             children: children
         }) : children
@@ -30017,12 +30017,12 @@ exports.default = Object.assign(Card, {
     ImgOverlay: (0, _cardImgOverlayDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardBody":"iN1Jc","./CardFooter":"jUi26","./CardHeader":"dXnnx","./CardImg":"1reTi","./CardImgOverlay":"Bi8dC","./CardLink":"9uFCo","./CardSubtitle":"i2BiN","./CardText":"aUUmg","./CardTitle":"79rSZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iN1Jc":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardBody":"iN1Jc","./CardFooter":"jUi26","./CardHeader":"dXnnx","./CardImg":"1reTi","./CardImgOverlay":"Bi8dC","./CardLink":"9uFCo","./CardSubtitle":"i2BiN","./CardText":"aUUmg","./CardTitle":"79rSZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iN1Jc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -30030,19 +30030,19 @@ const CardBody = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Com
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-body");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardBody.displayName = "CardBody";
 exports.default = CardBody;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"jUi26":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"jUi26":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -30050,18 +30050,18 @@ const CardFooter = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: C
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-footer");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardFooter.displayName = "CardFooter";
 exports.default = CardFooter;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"dXnnx":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"dXnnx":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _cardHeaderContext = require("./CardHeaderContext");
@@ -30081,14 +30081,14 @@ as: Component = "div", ...props }, ref)=>{
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
             ref: ref,
             ...props,
-            className: (0, _classnamesDefault.default)(className, prefix)
+            className: (0, _classNamesDefault.default)(className, prefix)
         })
     });
 });
 CardHeader.displayName = "CardHeader";
 exports.default = CardHeader;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"36cNB":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./CardHeaderContext":"36cNB","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"36cNB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -30100,8 +30100,8 @@ exports.default = context;
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1reTi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -30111,19 +30111,19 @@ const CardImg = /*#__PURE__*/ _react.forwardRef(// Need to define the default "a
     const prefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-img");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(variant ? `${prefix}-${variant}` : prefix, className),
+        className: (0, _classNamesDefault.default)(variant ? `${prefix}-${variant}` : prefix, className),
         ...props
     });
 });
 CardImg.displayName = "CardImg";
 exports.default = CardImg;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"Bi8dC":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"Bi8dC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -30131,19 +30131,19 @@ const CardImgOverlay = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, a
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-img-overlay");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardImgOverlay.displayName = "CardImgOverlay";
 exports.default = CardImgOverlay;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"9uFCo":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"9uFCo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -30151,55 +30151,55 @@ const CardLink = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Com
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-link");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardLink.displayName = "CardLink";
 exports.default = CardLink;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"i2BiN":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"i2BiN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
-var _divWithClassName = require("./divWithClassName");
-var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
+var _divWithclassName = require("./divWithclassName");
+var _divWithclassNameDefault = parcelHelpers.interopDefault(_divWithclassName);
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
-const DivStyledAsH6 = (0, _divWithClassNameDefault.default)("h6");
+const DivStyledAsH6 = (0, _divWithclassNameDefault.default)("h6");
 const CardSubtitle = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Component = DivStyledAsH6, ...props }, ref)=>{
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-subtitle");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardSubtitle.displayName = "CardSubtitle";
 exports.default = CardSubtitle;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","./divWithClassName":"eDg7t","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eDg7t":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","./divWithclassName":"eDg7t","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eDg7t":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _jsxRuntime = require("react/jsx-runtime");
 exports.default = (className)=>/*#__PURE__*/ _react.forwardRef((p, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             ...p,
             ref: ref,
-            className: (0, _classnamesDefault.default)(p.className, className)
+            className: (0, _classNamesDefault.default)(p.className, className)
         }));
 
-},{"react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aUUmg":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aUUmg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -30207,44 +30207,44 @@ const CardText = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Com
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-text");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardText.displayName = "CardText";
 exports.default = CardText;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"79rSZ":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"79rSZ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
-var _divWithClassName = require("./divWithClassName");
-var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
+var _divWithclassName = require("./divWithclassName");
+var _divWithclassNameDefault = parcelHelpers.interopDefault(_divWithclassName);
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
-const DivStyledAsH5 = (0, _divWithClassNameDefault.default)("h5");
+const DivStyledAsH5 = (0, _divWithclassNameDefault.default)("h5");
 const CardTitle = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Component = DivStyledAsH5, ...props }, ref)=>{
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "card-title");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 CardTitle.displayName = "CardTitle";
 exports.default = CardTitle;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","./divWithClassName":"eDg7t","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1wmVl":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","./divWithclassName":"eDg7t","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1wmVl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _jsxRuntime = require("react/jsx-runtime");
 const propTypes = {
     /** An accessible label indicating the relevant information about the Close Button. */ "aria-label": (0, _propTypesDefault.default).string,
@@ -30260,7 +30260,7 @@ const propTypes = {
 const CloseButton = /*#__PURE__*/ _react.forwardRef(({ className, variant, "aria-label": ariaLabel = "Close", ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
         ref: ref,
         type: "button",
-        className: (0, _classnamesDefault.default)("btn-close", variant && `btn-close-${variant}`, className),
+        className: (0, _classNamesDefault.default)("btn-close", variant && `btn-close-${variant}`, className),
         "aria-label": ariaLabel,
         ...props
     }));
@@ -30268,12 +30268,12 @@ CloseButton.displayName = "CloseButton";
 CloseButton.propTypes = propTypes;
 exports.default = CloseButton;
 
-},{"prop-types":"7wKI2","react":"21dqq","classnames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2L2I6":[function(require,module,exports) {
+},{"prop-types":"7wKI2","react":"21dqq","classNames":"jocGM","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2L2I6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useCol", ()=>useCol);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -30300,7 +30300,7 @@ function useCol({ as, bsPrefix, className, ...props }) {
     return [
         {
             ...props,
-            className: (0, _classnamesDefault.default)(className, ...spans, ...classes)
+            className: (0, _classNamesDefault.default)(className, ...spans, ...classes)
         },
         {
             as,
@@ -30315,17 +30315,17 @@ const Col = /*#__PURE__*/ _react.forwardRef(// Need to define the default "as" d
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...colProps,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, !spans.length && bsPrefix)
+        className: (0, _classNamesDefault.default)(className, !spans.length && bsPrefix)
     });
 });
 Col.displayName = "Col";
 exports.default = Col;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"acuzI":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"acuzI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _css = require("dom-helpers/css");
 var _cssDefault = parcelHelpers.interopDefault(_css);
 var _react = require("react");
@@ -30417,14 +30417,14 @@ const Collapse = /*#__PURE__*/ (0, _reactDefault.default).forwardRef(({ onEnter,
         appear: appear,
         children: (state, innerProps)=>/*#__PURE__*/ (0, _reactDefault.default).cloneElement(children, {
                 ...innerProps,
-                className: (0, _classnamesDefault.default)(className, children.props.className, collapseStyles[state], computedDimension === "width" && "collapse-horizontal")
+                className: (0, _classNamesDefault.default)(className, children.props.className, collapseStyles[state], computedDimension === "width" && "collapse-horizontal")
             })
     });
 });
 // @ts-ignore
 exports.default = Collapse;
 
-},{"classnames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"klmhr":[function(require,module,exports) {
+},{"classNames":"jocGM","dom-helpers/css":"klmhr","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./createChainedFunction":"1KNLM","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"klmhr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _getComputedStyle = require("./getComputedStyle");
@@ -31445,8 +31445,8 @@ function safeFindDOMNode(componentOrElement) {
 },{"react-dom":"j6uA9","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"hEdsw":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -31458,17 +31458,17 @@ as: Component = "div", className, ...props }, ref)=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
         ...props,
-        className: (0, _classnamesDefault.default)(className, fluid ? `${prefix}${suffix}` : prefix)
+        className: (0, _classNamesDefault.default)(className, fluid ? `${prefix}${suffix}` : prefix)
     });
 });
 Container.displayName = "Container";
 exports.default = Container;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aH18S":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aH18S":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _transition = require("react-transition-group/Transition");
 var _transitionEndListener = require("./transitionEndListener");
@@ -31505,18 +31505,18 @@ const Fade = /*#__PURE__*/ _react.forwardRef(({ className, children, transitionC
         childRef: children.ref,
         children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
                 ...innerProps,
-                className: (0, _classnamesDefault.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
+                className: (0, _classNamesDefault.default)("fade", className, children.props.className, fadeStyles[status], transitionClasses[status])
             })
     });
 });
 Fade.displayName = "Fade";
 exports.default = Fade;
 
-},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iBZ80":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./triggerBrowserReflow":"eWjs5","./TransitionWrapper":"jKUqZ","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iBZ80":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _react = require("react");
@@ -31560,7 +31560,7 @@ const Form = /*#__PURE__*/ _react.forwardRef(({ className, validated, // Need to
 as: Component = "form", ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...props,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, validated && "was-validated")
+        className: (0, _classNamesDefault.default)(className, validated && "was-validated")
     }));
 Form.displayName = "Form";
 Form.propTypes = propTypes;
@@ -31577,11 +31577,11 @@ exports.default = Object.assign(Form, {
     FloatingLabel: (0, _floatingLabelDefault.default)
 });
 
-},{"classnames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"idkr0":[function(require,module,exports) {
+},{"classNames":"jocGM","prop-types":"7wKI2","react":"21dqq","./FormCheck":"idkr0","./FormControl":"iynMc","./FormFloating":"aj346","./FormGroup":"1qBHH","./FormLabel":"66epi","./FormRange":"8zsCO","./FormSelect":"hHWyB","./FormText":"ffeC7","./Switch":"9O81i","./FloatingLabel":"coYzo","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"idkr0":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _feedback = require("./Feedback");
 var _feedbackDefault = parcelHelpers.interopDefault(_feedback);
@@ -31620,7 +31620,7 @@ as = "input", ...props }, ref)=>{
         value: innerFormContext,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             style: style,
-            className: (0, _classnamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, reverse && `${bsPrefix}-reverse`, type === "switch" && bsSwitchPrefix),
+            className: (0, _classNamesDefault.default)(className, hasLabel && bsPrefix, inline && `${bsPrefix}-inline`, reverse && `${bsPrefix}-reverse`, type === "switch" && bsSwitchPrefix),
             children: children || /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _jsxRuntime.Fragment), {
                 children: [
                     input,
@@ -31644,11 +31644,11 @@ exports.default = Object.assign(FormCheck, {
     Label: (0, _formCheckLabelDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aWeg2":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./Feedback":"aWeg2","./FormCheckInput":"dPzD9","./FormCheckLabel":"fGhS2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","./ElementChildren":"fdyAp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"aWeg2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
@@ -31666,17 +31666,17 @@ const Feedback = /*#__PURE__*/ _react.forwardRef(// Need to define the default "
 ({ as: Component = "div", className, type = "valid", tooltip = false, ...props }, ref)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...props,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
+        className: (0, _classNamesDefault.default)(className, `${type}-${tooltip ? "tooltip" : "feedback"}`)
     }));
 Feedback.displayName = "Feedback";
 Feedback.propTypes = propTypes;
 exports.default = Feedback;
 
-},{"classnames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"dPzD9":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","prop-types":"7wKI2","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"dPzD9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _formContext = require("./FormContext");
 var _formContextDefault = parcelHelpers.interopDefault(_formContext);
@@ -31692,13 +31692,13 @@ as: Component = "input", ...props }, ref)=>{
         ref: ref,
         type: type,
         id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
+        className: (0, _classNamesDefault.default)(className, bsPrefix, isValid && "is-valid", isInvalid && "is-invalid")
     });
 });
 FormCheckInput.displayName = "FormCheckInput";
 exports.default = FormCheckInput;
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"gjvSt":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"gjvSt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -31710,8 +31710,8 @@ exports.default = FormContext;
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"fGhS2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _formContext = require("./FormContext");
 var _formContextDefault = parcelHelpers.interopDefault(_formContext);
@@ -31725,13 +31725,13 @@ const FormCheckLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, h
         ...props,
         ref: ref,
         htmlFor: htmlFor || controlId,
-        className: (0, _classnamesDefault.default)(className, bsPrefix)
+        className: (0, _classNamesDefault.default)(className, bsPrefix)
     });
 });
 FormCheckLabel.displayName = "FormCheckLabel";
 exports.default = FormCheckLabel;
 
-},{"classnames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"fdyAp":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"fdyAp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "map", ()=>map);
@@ -31770,8 +31770,8 @@ var _react = require("react");
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iynMc":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _warning = require("warning");
 var _warningDefault = parcelHelpers.interopDefault(_warning);
@@ -31794,7 +31794,7 @@ as: Component = "input", ...props }, ref)=>{
         ref: ref,
         readOnly: readOnly,
         id: id || controlId,
-        className: (0, _classnamesDefault.default)(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === "color" && `${bsPrefix}-color`, isValid && "is-valid", isInvalid && "is-invalid")
+        className: (0, _classNamesDefault.default)(className, plaintext ? `${bsPrefix}-plaintext` : bsPrefix, size && `${bsPrefix}-${size}`, type === "color" && `${bsPrefix}-color`, isValid && "is-valid", isInvalid && "is-invalid")
     });
 });
 FormControl.displayName = "FormControl";
@@ -31802,7 +31802,7 @@ exports.default = Object.assign(FormControl, {
     Feedback: (0, _feedbackDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eUVzU":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","warning":"eUVzU","./Feedback":"aWeg2","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eUVzU":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -31849,8 +31849,8 @@ module.exports = warning;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -31858,14 +31858,14 @@ const FormFloating = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as:
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-floating");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 FormFloating.displayName = "FormFloating";
 exports.default = FormFloating;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1qBHH":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1qBHH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -31893,8 +31893,8 @@ exports.default = FormGroup;
 },{"react":"21dqq","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"66epi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _warning = require("warning");
 var _warningDefault = parcelHelpers.interopDefault(_warning);
@@ -31911,7 +31911,7 @@ as: Component = "label", bsPrefix, column = false, visuallyHidden = false, class
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-label");
     let columnClass = "col-form-label";
     if (typeof column === "string") columnClass = `${columnClass} ${columnClass}-${column}`;
-    const classes = (0, _classnamesDefault.default)(className, bsPrefix, visuallyHidden && "visually-hidden", column && columnClass);
+    const classes = (0, _classNamesDefault.default)(className, bsPrefix, visuallyHidden && "visually-hidden", column && columnClass);
     (0, _warningDefault.default)(controlId == null || !htmlFor, "`controlId` is ignored on `<FormLabel>` when `htmlFor` is specified.");
     htmlFor = htmlFor || controlId;
     if (column) return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _colDefault.default), {
@@ -31932,11 +31932,11 @@ as: Component = "label", bsPrefix, column = false, visuallyHidden = false, class
 FormLabel.displayName = "FormLabel";
 exports.default = FormLabel;
 
-},{"classnames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"8zsCO":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","warning":"eUVzU","./Col":"2L2I6","./FormContext":"gjvSt","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"8zsCO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _formContext = require("./FormContext");
@@ -31950,18 +31950,18 @@ const FormRange = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, id, ..
         ...props,
         type: "range",
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         id: id || controlId
     });
 });
 FormRange.displayName = "FormRange";
 exports.default = FormRange;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"hHWyB":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"hHWyB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _formContext = require("./FormContext");
@@ -31975,18 +31975,18 @@ const FormSelect = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, size, htmlSize, 
         ...props,
         size: htmlSize,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
+        className: (0, _classNamesDefault.default)(className, bsPrefix, size && `${bsPrefix}-${size}`, isValid && `is-valid`, isInvalid && `is-invalid`),
         id: id || controlId
     });
 });
 FormSelect.displayName = "FormSelect";
 exports.default = FormSelect;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"ffeC7":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./FormContext":"gjvSt","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"ffeC7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -31997,13 +31997,13 @@ const FormText = /*#__PURE__*/ _react.forwardRef(// Need to define the default "
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...props,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, muted && "text-muted")
+        className: (0, _classNamesDefault.default)(className, bsPrefix, muted && "text-muted")
     });
 });
 FormText.displayName = "FormText";
 exports.default = FormText;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"9O81i":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"9O81i":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -32024,8 +32024,8 @@ exports.default = Object.assign(Switch, {
 },{"react":"21dqq","./FormCheck":"idkr0","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"coYzo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _formGroup = require("./FormGroup");
 var _formGroupDefault = parcelHelpers.interopDefault(_formGroup);
@@ -32036,7 +32036,7 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, ch
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "form-floating");
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)((0, _formGroupDefault.default), {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         controlId: controlId,
         ...props,
         children: [
@@ -32051,11 +32051,11 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, ch
 FloatingLabel.displayName = "FloatingLabel";
 exports.default = FloatingLabel;
 
-},{"classnames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cXyL2":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./FormGroup":"1qBHH","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cXyL2":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _all = require("prop-types-extra/lib/all");
 var _allDefault = parcelHelpers.interopDefault(_all);
 var _react = require("react");
@@ -32091,7 +32091,7 @@ const Nav = /*#__PURE__*/ _react.forwardRef((uncontrolledProps, ref)=>{
         as: as,
         ref: ref,
         activeKey: activeKey,
-        className: (0, _classnamesDefault.default)(className, {
+        className: (0, _classNamesDefault.default)(className, {
             [bsPrefix]: !isNavbar,
             [`${navbarBsPrefix}-nav`]: isNavbar,
             [`${navbarBsPrefix}-nav-scroll`]: isNavbar && navbarScroll,
@@ -32109,7 +32109,7 @@ exports.default = Object.assign(Nav, {
     Link: (0, _navLinkDefault.default)
 });
 
-},{"classnames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"37Ank":[function(require,module,exports) {
+},{"classNames":"jocGM","prop-types-extra/lib/all":"37Ank","react":"21dqq","uncontrollable":"b3yWY","@restart/ui/Nav":"fZdNd","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./CardHeaderContext":"36cNB","./NavItem":"ew05W","./NavLink":"7geL8","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"37Ank":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -32931,8 +32931,8 @@ exports.default = context;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -32940,18 +32940,18 @@ const NavItem = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Comp
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "nav-item");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 NavItem.displayName = "NavItem";
 exports.default = NavItem;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"7geL8":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"7geL8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _anchor = require("@restart/ui/Anchor");
 var _anchorDefault = parcelHelpers.interopDefault(_anchor);
@@ -32973,13 +32973,13 @@ const NavLink = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as: Comp
         ...navItemProps,
         ref: ref,
         disabled: disabled,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, disabled && "disabled", meta.isActive && "active")
+        className: (0, _classNamesDefault.default)(className, bsPrefix, disabled && "disabled", meta.isActive && "active")
     });
 });
 NavLink.displayName = "NavLink";
 exports.default = NavLink;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cQOWi":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","@restart/ui/Anchor":"cQOWi","@restart/ui/NavItem":"2cGYS","@restart/ui/SelectableContext":"8zLqy","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cQOWi":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref);
@@ -33408,8 +33408,8 @@ const isDOM = typeof document !== "undefined";
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"1mHjo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _selectableContext = require("@restart/ui/SelectableContext");
 var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
@@ -33468,7 +33468,7 @@ const Navbar = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
                 ref: ref,
                 ...controlledProps,
-                className: (0, _classnamesDefault.default)(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
+                className: (0, _classNamesDefault.default)(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
             })
         })
     });
@@ -33482,11 +33482,11 @@ exports.default = Object.assign(Navbar, {
     Toggle: (0, _navbarToggleDefault.default)
 });
 
-},{"classnames":"jocGM","react":"21dqq","@restart/ui/SelectableContext":"8zLqy","uncontrollable":"b3yWY","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarToggle":"7vOXv","./NavbarOffcanvas":"fOxoE","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./NavbarText":"76xFa","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iOo4v":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","@restart/ui/SelectableContext":"8zLqy","uncontrollable":"b3yWY","./NavbarBrand":"iOo4v","./NavbarCollapse":"eNSCC","./NavbarToggle":"7vOXv","./NavbarOffcanvas":"fOxoE","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","./NavbarText":"76xFa","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"iOo4v":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -33497,13 +33497,13 @@ const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, as, 
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ...props,
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix)
+        className: (0, _classNamesDefault.default)(className, bsPrefix)
     });
 });
 NavbarBrand.displayName = "NavbarBrand";
 exports.default = NavbarBrand;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eNSCC":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eNSCC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -33533,8 +33533,8 @@ exports.default = NavbarCollapse;
 },{"react":"21dqq","./Collapse":"acuzI","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"7vOXv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _useEventCallback = require("@restart/hooks/useEventCallback");
 var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
@@ -33557,7 +33557,7 @@ as: Component = "button", onClick, ...props }, ref)=>{
         ref: ref,
         onClick: handleClick,
         "aria-label": label,
-        className: (0, _classnamesDefault.default)(className, bsPrefix, !expanded && "collapsed"),
+        className: (0, _classNamesDefault.default)(className, bsPrefix, !expanded && "collapsed"),
         children: children || /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
             className: `${bsPrefix}-icon`
         })
@@ -33566,7 +33566,7 @@ as: Component = "button", onClick, ...props }, ref)=>{
 NavbarToggle.displayName = "NavbarToggle";
 exports.default = NavbarToggle;
 
-},{"classnames":"jocGM","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"fOxoE":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","@restart/hooks/useEventCallback":"7ONdq","./ThemeProvider":"dVixI","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"fOxoE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -33591,8 +33591,8 @@ exports.default = NavbarOffcanvas;
 },{"react":"21dqq","./Offcanvas":"eC3RS","./NavbarContext":"dpn1g","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eC3RS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _useBreakpoint = require("@restart/hooks/useBreakpoint");
 var _useBreakpointDefault = parcelHelpers.interopDefault(_useBreakpoint);
 var _useEventCallback = require("@restart/hooks/useEventCallback");
@@ -33629,7 +33629,7 @@ function BackdropTransition(props) {
         ...props
     });
 }
-const Offcanvas = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, children, "aria-labelledby": ariaLabelledby, placement = "start", responsive, /* BaseModal props */ show = false, backdrop = true, keyboard = true, scroll = false, onEscapeKeyDown, onShow, onHide, container, autoFocus = true, enforceFocus = true, restoreFocus = true, restoreFocusOptions, onEntered, onExit, onExiting, onEnter, onEntering, onExited, backdropClassName, manager: propsManager, renderStaticNode = false, ...props }, ref)=>{
+const Offcanvas = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, children, "aria-labelledby": ariaLabelledby, placement = "start", responsive, /* BaseModal props */ show = false, backdrop = true, keyboard = true, scroll = false, onEscapeKeyDown, onShow, onHide, container, autoFocus = true, enforceFocus = true, restoreFocus = true, restoreFocusOptions, onEntered, onExit, onExiting, onEnter, onEntering, onExited, backdropclassName, manager: propsManager, renderStaticNode = false, ...props }, ref)=>{
     const modalManager = (0, _react.useRef)();
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "offcanvas");
     const { onToggle } = (0, _react.useContext)((0, _navbarContextDefault.default)) || {};
@@ -33675,15 +33675,15 @@ const Offcanvas = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, childr
     };
     const renderBackdrop = (0, _react.useCallback)((backdropProps)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             ...backdropProps,
-            className: (0, _classnamesDefault.default)(`${bsPrefix}-backdrop`, backdropClassName)
+            className: (0, _classNamesDefault.default)(`${bsPrefix}-backdrop`, backdropclassName)
         }), [
-        backdropClassName,
+        backdropclassName,
         bsPrefix
     ]);
     const renderDialog = (dialogProps)=>/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             ...dialogProps,
             ...props,
-            className: (0, _classnamesDefault.default)(className, responsive ? `${bsPrefix}-${responsive}` : bsPrefix, `${bsPrefix}-${placement}`),
+            className: (0, _classNamesDefault.default)(className, responsive ? `${bsPrefix}-${responsive}` : bsPrefix, `${bsPrefix}-${placement}`),
             "aria-labelledby": ariaLabelledby,
             children: children
         });
@@ -33728,7 +33728,7 @@ exports.default = Object.assign(Offcanvas, {
     Title: (0, _offcanvasTitleDefault.default)
 });
 
-},{"classnames":"jocGM","@restart/hooks/useBreakpoint":"2c4de","@restart/hooks/useEventCallback":"7ONdq","react":"21dqq","@restart/ui/Modal":"crj1M","./Fade":"aH18S","./OffcanvasBody":"fX7Bo","./OffcanvasToggling":"eGvzt","./ModalContext":"2U4Zk","./NavbarContext":"dpn1g","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./ThemeProvider":"dVixI","./BootstrapModalManager":"lr1Yp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2c4de":[function(require,module,exports) {
+},{"classNames":"jocGM","@restart/hooks/useBreakpoint":"2c4de","@restart/hooks/useEventCallback":"7ONdq","react":"21dqq","@restart/ui/Modal":"crj1M","./Fade":"aH18S","./OffcanvasBody":"fX7Bo","./OffcanvasToggling":"eGvzt","./ModalContext":"2U4Zk","./NavbarContext":"dpn1g","./OffcanvasHeader":"a6xAh","./OffcanvasTitle":"77qdX","./ThemeProvider":"dVixI","./BootstrapModalManager":"lr1Yp","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2c4de":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -34602,8 +34602,8 @@ function getReactVersion() {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -34611,18 +34611,18 @@ const OffcanvasBody = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "offcanvas-body");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 OffcanvasBody.displayName = "OffcanvasBody";
 exports.default = OffcanvasBody;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eGvzt":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"eGvzt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _transition = require("react-transition-group/Transition");
 var _transitionEndListener = require("./transitionEndListener");
@@ -34649,14 +34649,14 @@ const OffcanvasToggling = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className
         childRef: children.ref,
         children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
                 ...innerProps,
-                className: (0, _classnamesDefault.default)(className, children.props.className, (status === (0, _transition.ENTERING) || status === (0, _transition.EXITING)) && `${bsPrefix}-toggling`, transitionStyles[status])
+                className: (0, _classNamesDefault.default)(className, children.props.className, (status === (0, _transition.ENTERING) || status === (0, _transition.EXITING)) && `${bsPrefix}-toggling`, transitionStyles[status])
             })
     });
 });
 OffcanvasToggling.displayName = "OffcanvasToggling";
 exports.default = OffcanvasToggling;
 
-},{"classnames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./TransitionWrapper":"jKUqZ","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2U4Zk":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","react-transition-group/Transition":"cKsrS","./transitionEndListener":"68oh7","./TransitionWrapper":"jKUqZ","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"2U4Zk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -34670,8 +34670,8 @@ exports.default = ModalContext;
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"a6xAh":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _abstractModalHeader = require("./AbstractModalHeader");
@@ -34683,7 +34683,7 @@ const OffcanvasHeader = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, 
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)((0, _abstractModalHeaderDefault.default), {
         ref: ref,
         ...props,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         closeLabel: closeLabel,
         closeButton: closeButton
     });
@@ -34691,7 +34691,7 @@ const OffcanvasHeader = /*#__PURE__*/ _react.forwardRef(({ bsPrefix, className, 
 OffcanvasHeader.displayName = "OffcanvasHeader";
 exports.default = OffcanvasHeader;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AbstractModalHeader":"hPF8S","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"hPF8S":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","./AbstractModalHeader":"hPF8S","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"hPF8S":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -34728,26 +34728,26 @@ exports.default = AbstractModalHeader;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _divWithClassName = require("./divWithClassName");
-var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
+var _divWithclassName = require("./divWithclassName");
+var _divWithclassNameDefault = parcelHelpers.interopDefault(_divWithclassName);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
-const DivStyledAsH5 = (0, _divWithClassNameDefault.default)("h5");
+const DivStyledAsH5 = (0, _divWithclassNameDefault.default)("h5");
 const OffcanvasTitle = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: Component = DivStyledAsH5, ...props }, ref)=>{
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "offcanvas-title");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 OffcanvasTitle.displayName = "OffcanvasTitle";
 exports.default = OffcanvasTitle;
 
-},{"react":"21dqq","classnames":"jocGM","./divWithClassName":"eDg7t","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"lr1Yp":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./divWithclassName":"eDg7t","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"lr1Yp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getSharedManager", ()=>getSharedManager);
@@ -34846,21 +34846,21 @@ function hasClass(element, className) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>removeClass);
-function replaceClassName(origClass, classToRemove) {
+function replaceclassName(origClass, classToRemove) {
     return origClass.replace(new RegExp("(^|\\s)" + classToRemove + "(?:\\s|$)", "g"), "$1").replace(/\s+/g, " ").replace(/^\s*|\s*$/g, "");
 }
 function removeClass(element, className) {
     if (element.classList) element.classList.remove(className);
-    else if (typeof element.className === "string") element.className = replaceClassName(element.className, className);
-    else element.setAttribute("class", replaceClassName(element.className && element.className.baseVal || "", className));
+    else if (typeof element.className === "string") element.className = replaceclassName(element.className, className);
+    else element.setAttribute("class", replaceclassName(element.className && element.className.baseVal || "", className));
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"76xFa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
 "use client";
@@ -34868,18 +34868,18 @@ const NavbarText = /*#__PURE__*/ _react.forwardRef(({ className, bsPrefix, as: C
     bsPrefix = (0, _themeProvider.useBootstrapPrefix)(bsPrefix, "navbar-text");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
-        className: (0, _classnamesDefault.default)(className, bsPrefix),
+        className: (0, _classNamesDefault.default)(className, bsPrefix),
         ...props
     });
 });
 NavbarText.displayName = "NavbarText";
 exports.default = NavbarText;
 
-},{"react":"21dqq","classnames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cMC39":[function(require,module,exports) {
+},{"react":"21dqq","classNames":"jocGM","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"cMC39":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _classNames = require("classNames");
+var _classNamesDefault = parcelHelpers.interopDefault(_classNames);
 var _react = require("react");
 var _themeProvider = require("./ThemeProvider");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -34903,13 +34903,13 @@ as: Component = "div", ...props }, ref)=>{
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(Component, {
         ref: ref,
         ...props,
-        className: (0, _classnamesDefault.default)(className, decoratedBsPrefix, ...classes)
+        className: (0, _classNamesDefault.default)(className, decoratedBsPrefix, ...classes)
     });
 });
 Row.displayName = "Row";
 exports.default = Row;
 
-},{"classnames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"ho5wj":[function(require,module,exports) {
+},{"classNames":"jocGM","react":"21dqq","./ThemeProvider":"dVixI","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"kK7f2"}],"ho5wj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d8d7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36210,7 +36210,7 @@ Link.displayName = "Link";
     if (typeof classNameProp === "function") className = classNameProp(renderProps);
     else // If the className prop is not a function, we use a default `active`
     // class for <NavLink />s that are active. In v5 `active` was the default
-    // value for `activeClassName`, but we are removing that API and can still
+    // value for `activeclassName`, but we are removing that API and can still
     // use the old default behavior for a cleaner upgrade path and keep the
     // simple styling rules working as they currently do.
     className = [

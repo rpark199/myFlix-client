@@ -33,6 +33,5 @@ MovieCard.propTypes = {
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
     }).isRequired,
-    Actors: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };

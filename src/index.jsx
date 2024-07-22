@@ -1,3 +1,5 @@
+import React, { Component } from 'react'
+
 import { createRoot } from "react-dom/client";
 
 import { MainView } from "./Components/main-view/main-view";

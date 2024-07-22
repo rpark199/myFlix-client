@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from "react";
 import { MoviesList } from "../movies-list/movies-list";
 import { MovieView } from "../movie-view/movie-view";
@@ -97,6 +98,22 @@ export const MainView = () => {
                             setToken(token);
                           }}
                         />
+                      </Col>
+                    )}
+                    </Row>
+                  </>
+                }
+              />
+              <Route
+                path="/signup"
+                element={
+                  <>
+                  <Row className="justify-content-center">
+                    {user ? (
+                      <Navigate to="/" />
+                    ) : (
+                      <Col xs={12} sm={12} md={8} lg={4}>
+                        <SignupView />
                       </Col>
                     )}
                     </Row>
