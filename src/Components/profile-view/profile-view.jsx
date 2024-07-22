@@ -1,138 +1,83 @@
-import { useState, useEffect } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import axios from "axios";
-import PropTypes from "prop-types";
-import { Row, Col } from "react-bootstrap";
-import { UserInfo } from "./user-info";
-import { ProfileUpdate } from "./profile-update";
-import { ProfileDelete } from "./profile-delete";
-import { FavoriteMovies } from "./favorite-movies";
-import { useNavigate } from "react-router-dom";
-import moment from "moment";
+import { Col, Container, Row, Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { MovieCard } from "../movie-card/movie-card";
 
 export const ProfileView = ({ username, token, onLogout, movies }) => {
     const [user, setUser] = useState({});
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [isDeleting, setIsDeleting] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
       const fetchUserData = async () => {
         try {
-          const response = await axios.get(
-            "https://moviflex-a914bff79426.herokuapp.com/users/${username}",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-          setUser(response.data);
+          setUser(JSON.parse(localStorage.getItem("user")) || localStorage.getItem("user"));
         } catch (error) {
           setError(error.message);
-        } finally {
-          setLoading(false);
-        }
+        } 
       };
   
       fetchUserData();
     }, [username, token]);
 
-    const handleUpdate = (updatedUser) => {
-      setUser(updatedUser); 
-      navigate(`/users/${updatedUser.Username}`, { replace: true });
-    };
-
-    const handleDelete = async () => {
-      if (window.confirm("Are you sure you want to delete your profile?")) {
-        setIsDeleting(true);
-        try {
-          const response = await axios.delete(
-            `https://moviflex-a914bff79426.herokuapp.com/users/${username}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
-
-          if (response.status === 200) {
-            alert("Profile deleted");
-            onLogout();
-            navigate("/login");
-          } else {
-            alert("Failed to delete profile:", response.statusText);
-            setIsDeleting(false);
-          }
-        } catch (error) {
-          console.error("Error deleting profile:", error);
-        }
-      }
-    };
-
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-
-    if (error) {
-      return <div>Error: {error}</div>
-    }
-
-    const favoriteMovies = movies.filter((m) =>
-      user.FavoriteMovies.includes(m._id)
-    );
-
-    const formattedBirthday = moment.utc(user.Birthday).format("MM-DD-YYYY");
-    
     return (
-      <Row className="justify-content-center">
-        <Col lg={8}>
-          <div className="profile-section mb-4 p-4">
-            <h1 className="text-center mb-4">Profile Info</h1>
-            <UserInfo
-              username={user.Username}
-              email={user.Email}
-              birthday={formattedBirthday}
-            />
-          </div>
-          <div className="profile-section mb-4 p-4">
-            <h2 className="text-center mb-4">Update Info</h2>
-            <ProfileUpdate
-              username={username}
-              token={token}
-              user={user}
-              onProfileUpdate={handleUpdate}
-            />
-            <ProfileDelete username={username} onDelete={handleDelete} />
-          </div>
-        </Col>
-      <Row className="mb-4">
-        <Col xs={12}>
-          <div className="profile-section p-4">
-            <h2 className="text-center mb-4">Favorite Movies</h2>
-            <FavoriteMovies
-              favoriteMovies={favoriteMovies}
-              user={user}
-              token={token}
-              onUpdateFavorites={(movieId) => {
-                setUser((prevUser) => ({
-                  ...prevUser,
-                  FavoriteMovies: prevUser.FavoriteMovies.filter(
-                    (id) => id !== movieId
-                  ),
-                }));
-              }}
-            />
-          </div>
-        </Col>
-      </Row>
-    </Row>
-  );
-};
+      <Container>
+        <h1>Profile</h1>
+        <p>Welcome, {user.Username}</p>
+        <p>Email: {user.Email}</p>
+        <p>Birthday: {user.Birthday}</p>
+        <Form onSubmit={(e) => {
+          e.preventDefault();
+          axios.put(`https://moviflex-a914bff79426.herokuapp.com/users/${e.target.username.value}`,
+             {
+            "Username": e.target.username.value,
+            "Email": e.target.email.value,
+            "Birthday": e.target.birthday.value
+          }, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+          }).then((response) => {
+            console.log(response.data);
+            setUser(response.data);
+            localStorage.setItem('user', JSON.stringify(response.data));
+            navigate('/profile');
+          }).catch((error) => {
+            console.log(error);
+          });
+        }}>
+          <Form.Group className="mb-3" controlId="formBasicUsername">
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" placeholder="Username" name="username" defaultValue={user.Username} />
+          </Form.Group>
 
-ProfileView.propTypes = {
-    username: PropTypes.string.isRequired,
-    token: PropTypes.string.isRequired,
-    onLogout: PropTypes.func.isRequired,
-    movies: PropTypes.array.isRequired,
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control type="email" placeholder="Email" name="email" defaultValue={user.Email} />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicBirthday">
+            <Form.Label>Birthday</Form.Label>
+            <Form.Control type="date" placeholder="Birthday" name="birthday" defaultValue={user.Birthday} />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+            Update
+          </Button>
+            <h2>Favorite Movies</h2>
+        <Row xs={1} md={2} className="g-4">
+          {user.FavoriteMovies && user.FavoriteMovies.map((movie) => (
+            <Col key={movie._id}>
+              <Link to={`/movies/${encodeURIComponent(movie._id)}`}>
+                <MovieCard movie={movie} /> 
+              </Link>
+            </Col>
+          ))}
+        </Row>
+        </Form>
+      </Container>
+    );
   };

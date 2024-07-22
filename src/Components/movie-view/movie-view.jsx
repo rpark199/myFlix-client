@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
@@ -47,7 +48,7 @@ export const MovieView = ({ user, token, onFavorite }) => {
       <Row className="justify-content-center">
         <Col md={6}>
           <img
-            src={movie.ImagePath}
+            src={[process.env.REACT_APP_API_URL, movie.ImagePath].join('/')}
             alt={movie.Title}
             className="img-fluid rounded"
           />

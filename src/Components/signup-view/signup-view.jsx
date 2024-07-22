@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -73,7 +74,7 @@ export const SignupView = () => {
 
     return (
         <Container className="signup-section mb-4 p-4">
-            <Row classname="justify-content-center">
+            <Row className="justify-content-center">
                 <Col md={12}>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formUsername">

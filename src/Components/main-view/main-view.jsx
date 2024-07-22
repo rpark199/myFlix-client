@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from "react";
 import { MoviesList } from "../movies-list/movies-list";
 import { MovieView } from "../movie-view/movie-view";
@@ -104,6 +105,22 @@ export const MainView = () => {
                 }
               />
               <Route
+                path="/signup"
+                element={
+                  <>
+                  <Row className="justify-content-center">
+                    {user ? (
+                      <Navigate to="/" />
+                    ) : (
+                      <Col xs={12} sm={12} md={8} lg={4}>
+                        <SignupView />
+                      </Col>
+                    )}
+                    </Row>
+                  </>
+                }
+              />
+              <Route
                 path="/"
                 element={
                   <>
@@ -149,6 +166,25 @@ export const MainView = () => {
                         </Col>
                       )}
                     </Row>
+                  </>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <>
+                    {!user ? (
+                      <Navigate to="/login" replace />
+                    ) : (
+                      <Col xs={12}>
+                        <ProfileView
+                          username={user.Username}
+                          token={token}
+                          movies={movies}
+                          onLogout={handleLogout}
+                        />
+                      </Col>
+                    )}
                   </>
                 }
               />
