@@ -7,7 +7,7 @@ export const ProfileUpdate = ({ username, token, user, onProfileUpdate }) => {
   const formatDate = (dateString) => {
     let utcDate = moment.utc(dateString);
 
-    let formattedDate = utcDate.format("YYYY-MM-DD");
+    let formattedDate = utcDate.format("MM-DD-YYYY");
 
     return formattedDate;
   };
@@ -57,13 +57,11 @@ export const ProfileUpdate = ({ username, token, user, onProfileUpdate }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check if passwords match
     if (formData.Password !== formData.ConfirmPassword) {
       setPasswordError("Passwords do not match.");
       return;
     }
 
-    // Check if password meets minimum length requirement
     if (formData.Password.length > 0 && formData.Password.length < 8) {
       setPasswordError("Password must be at least 8 characters long.");
       return;
@@ -72,7 +70,7 @@ export const ProfileUpdate = ({ username, token, user, onProfileUpdate }) => {
     setLoading(true);
     try {
       const response = await axios.put(
-        `"https://moviflex-a914bff79426.herokuapp.com/users/${username}`,
+        "https://moviflex-a914bff79426.herokuapp.com/users/${username}",
         {
           ...formData,
           Birthday: formatDate(formData.Birthday),
@@ -87,12 +85,10 @@ export const ProfileUpdate = ({ username, token, user, onProfileUpdate }) => {
       localStorage.setItem("user", JSON.stringify(updatedUser));
       onProfileUpdate(updatedUser);
       alert("Profile updated successfully");
-      // Force window reload after successful update
       window.location.reload();
     } catch (error) {
       setError(error.message);
       alert("Failed to update profile");
-      // Force window reload after failed update
       window.location.reload();
     } finally {
       setLoading(false);
