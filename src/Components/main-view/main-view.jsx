@@ -9,13 +9,21 @@ import Col from "react-bootstrap/Col";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { NavigationBar, Navigationbar } from "../navigation-bar/navigation-bar";
 
+import { getMovies, setMovies, filterMovies } from "../../actions";
+
+import { createStore } from "redux";
+import movies from "../../reducers";
 
 export const MainView = () => {
+
+  const store = createStore(movies);
+  console.log("Initial State", store.getState());
+
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const [user, setUser] = useState(storedUser? storedUser : null);
   const [token, setToken] = useState(storedToken? storedToken : null);
-  const [movies, setMovies] = useState([]);
+  // const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   
   useEffect(() => {
@@ -40,7 +48,8 @@ export const MainView = () => {
           };
         });
 
-        setMovies(moviesFromApi);
+        // setMovies(moviesFromApi);
+        store.dispatch(setMovies(moviesFromApi));
       });
     }
   }, [token]);
@@ -153,7 +162,8 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <>
-                    {movies.map((movie) => (
+                    {store.getState().movies.map((movie) => (
+                    // {movies.map((movie) => (
                       <Col className="mb-4" key={movie.id} md={3}>
                         <MovieCard movie={movie} />
                       </Col>
